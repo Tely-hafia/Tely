@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des Billets</title>
+</head>
+<body>
+  <h2>Interface Billets - Personnel</h2>
+  <form>
+    <label>Numéro de billet :</label>
+    <input type="text" id="ticketNumber"><br><br>
+    <button type="button" onclick="verifierBillet()">Vérifier</button>
+  </form>
+
+  <div id="resultat"></div>
+
+  <script>
+    function verifierBillet() {
+      const ticket = document.getElementById('ticketNumber').value;
+      // Exemple simple de vérification (à remplacer par vraie base)
+      if (ticket === "A123") {
+        document.getElementById('resultat').textContent = "Billet valide ✅";
+      } else {
+        document.getElementById('resultat').textContent = "Billet invalide ❌";
+      }
+    }
+  </script>
+</body>
+</html>
