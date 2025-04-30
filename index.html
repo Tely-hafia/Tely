@@ -3,29 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TeLy - Loisirs Premium</title>
+  <title>Tely - Loisirs & Aventure</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Bannière navigation -->
   <header class="nav-banner">
     <div class="nav-container">
-      <a href="index.html" class="logo-link">
-        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1741902728/TeLy_Logo_-_Original_with_Transparent_Background_aekoym.svg" alt="TeLy" class="logo-img">
-      </a>
+      <div class="logo-container">
+        <img src="logo-tely.png" alt="Tely" class="logo-img">
+        <span class="logo-text">Tely</span>
+      </div>
       
       <nav class="main-nav">
         <ul>
           <li class="active"><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-          <li><a href="reserver.html"><i class="fas fa-calendar-check"></i> Réserver</a></li>
-          <li><a href="login.html"><i class="fas fa-user-circle"></i> Connexion</a></li>
+          <li><a href="reserver.html"><i class="fas fa-ticket-alt"></i> Réserver</a></li>
+          <li><a href="login.html"><i class="fas fa-user"></i> Connexion</a></li>
         </ul>
       </nav>
       
       <div class="nav-cta">
-        <a href="reserver.html" class="cta-button"><i class="fas fa-ticket-alt"></i> Billetterie</a>
+        <a href="reserver.html" class="cta-button">Réserver</a>
       </div>
     </div>
   </header>
@@ -34,38 +35,48 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Bienvenue à TeLy</h1>
-      <p>Votre destination loisirs premium</p>
+      <h1>Bienvenue à Tely</h1>
+      <p>Le lieu idéal pour des moments inoubliables</p>
     </div>
   </section>
 
   <!-- Section Présentation -->
   <section class="presentation">
     <div class="container">
-      <h2>L'expérience <span class="brand">TeLy</span></h2>
-      
-      <div class="presentation-text">
-        <p class="intro">Bienvenue à TeLy, le lieu idéal pour les jeunes et les couples en quête de fun et de moments inoubliables !</p>
+      <div class="presentation-content">
+        <h2>Votre espace de loisirs premium</h2>
+        <p class="intro">Bienvenue à Tely, le lieu idéal pour les jeunes et les couples en quête de fun et de moments inoubliables !</p>
         
-        <div class="highlights">
-          <div class="highlight-item">
+        <div class="features-grid">
+          <div class="feature-card">
             <i class="fas fa-water-ladder"></i>
-            <p>Parc aquatique avec toboggan spectaculaire</p>
+            <h3>Parc aquatique</h3>
+            <p>Grand toboggan spectaculaire et bassins rafraîchissants</p>
           </div>
-          <div class="highlight-item">
+          
+          <div class="feature-card">
             <i class="fas fa-gamepad"></i>
-            <p>Espace gaming et jeux forains</p>
+            <h3>Espace gaming</h3>
+            <p>Arcades et jeux vidéo dernière génération</p>
           </div>
-          <div class="highlight-item">
+          
+          <div class="feature-card">
             <i class="fas fa-film"></i>
-            <p>Cinéma en plein air sous les étoiles</p>
+            <h3>Cinéma étoilé</h3>
+            <p>Projections en plein air sous les étoiles</p>
+          </div>
+          
+          <div class="feature-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Restauration</h3>
+            <p>Espaces gourmands pour toutes les envies</p>
           </div>
         </div>
         
-        <div class="full-description">
-          <p>TeLy est un centre de loisirs unique, conçu pour offrir détente, sensations fortes et complicité. Vivez l'adrénaline dans notre parc aquatique, amusez-vous entre amis dans les jeux forains et l'espace gaming, puis détendez-vous à deux dans notre cinéma en plein air.</p>
+        <div class="description">
+          <p>Tely est un centre de loisirs unique, conçu pour offrir détente, sensations fortes et complicité. Vivez l'adrénaline dans notre parc aquatique, amusez-vous entre amis dans les jeux forains et l'espace gaming, puis détendez-vous à deux dans notre cinéma en plein air.</p>
           <p>Et pour combler toutes les envies, nos espaces de restauration vous attendent dans une ambiance conviviale et décontractée.</p>
-          <p class="tagline">TeLy, l'endroit parfait pour se créer des souvenirs à deux ou entre amis.</p>
+          <p class="highlight">Tely, l'endroit parfait pour se créer des souvenirs à deux ou entre amis.</p>
         </div>
       </div>
     </div>
@@ -74,22 +85,25 @@
   <!-- Section CTA -->
   <section class="cta-section">
     <div class="container">
-      <h3>Prêt à vivre l'expérience TeLy ?</h3>
-      <a href="reserver.html" class="cta-button big"><i class="fas fa-calendar-alt"></i> Réserver maintenant</a>
+      <h2>Prêt à vivre l'expérience Tely ?</h2>
+      <a href="reserver.html" class="cta-button big">Réserver maintenant</a>
     </div>
   </section>
 
   <footer class="main-footer">
     <div class="container">
-      <div class="footer-logo">
-        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1741902728/TeLy_Logo_-_Original_with_Transparent_Background_aekoym.svg" alt="TeLy" class="logo-img">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo-tely-white.png" alt="Tely" class="logo-img">
+          <span>Tely</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">CGV</a>
+          <a href="#">Contact</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="#"><i class="fas fa-file-alt"></i> Mentions légales</a>
-        <a href="#"><i class="fas fa-scroll"></i> CGV</a>
-        <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-      </div>
-      <p class="copyright">© 2023 TeLy - Tous droits réservés</p>
+      <p class="copyright">© 2023 Tely - Tous droits réservés</p>
     </div>
   </footer>
 </body>
