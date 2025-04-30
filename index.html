@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tely - Loisirs & Aventure</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -38,14 +38,10 @@
       <h1>Bienvenue à Tely</h1>
       <p>Le lieu idéal pour des moments inoubliables</p>
       
-      <!-- Barre de progression en coeur -->
+      <!-- Cœur de progression -->
       <div class="heart-progress-container">
-        <div class="heart-progress">
-          <div class="heart-progress-bar" style="width: 70%">
-            <span class="progress-text">Ouverture bientôt</span>
-          </div>
-          <div class="heart-shape"></div>
-        </div>
+        <div class="heart-shape" style="--progress: 70%"></div>
+        <div class="heart-label">Ouverture bientôt</div>
         <div class="progress-percent">70%</div>
       </div>
       
@@ -53,13 +49,79 @@
     </div>
   </section>
 
-  <!-- Le reste du code reste inchangé -->
+  <!-- Section Présentation -->
   <section class="presentation">
-    <!-- ... -->
+    <div class="container">
+      <div class="presentation-content">
+        <h2>Votre espace de loisirs premium</h2>
+        <p class="intro">Bienvenue à Tely, le lieu idéal pour les jeunes et les couples en quête de fun et de moments inoubliables !</p>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-water-ladder"></i>
+            <h3>Parc aquatique</h3>
+            <p>Grand toboggan spectaculaire et bassins rafraîchissants</p>
+          </div>
+          
+          <div class="feature-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Espace gaming</h3>
+            <p>Arcades et jeux vidéo dernière génération</p>
+          </div>
+          
+          <div class="feature-card">
+            <i class="fas fa-film"></i>
+            <h3>Cinéma étoilé</h3>
+            <p>Projections en plein air sous les étoiles</p>
+          </div>
+          
+          <div class="feature-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Restauration</h3>
+            <p>Espaces gourmands pour toutes les envies</p>
+          </div>
+        </div>
+        
+        <div class="description">
+          <p>Tely est un centre de loisirs unique, conçu pour offrir détente, sensations fortes et complicité. Vivez l'adrénaline dans notre parc aquatique, amusez-vous entre amis dans les jeux forains et l'espace gaming, puis détendez-vous à deux dans notre cinéma en plein air.</p>
+          <p>Et pour combler toutes les envies, nos espaces de restauration vous attendent dans une ambiance conviviale et décontractée.</p>
+          <p class="highlight">Tely, l'endroit parfait pour se créer des souvenirs à deux ou entre amis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Prêt à vivre l'expérience Tely ?</h2>
+      <a href="reserver.html" class="cta-button big">Réserver maintenant</a>
+    </div>
   </section>
 
   <footer class="main-footer">
-    <!-- ... -->
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1741902728/TeLy_Logo_-_Original_with_Transparent_Background_aekoym.svg" alt="Tely" class="logo-img">
+          <span>Tely</span>
+        </div>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-file-alt"></i> Mentions légales</a>
+          <a href="#"><i class="fas fa-scroll"></i> CGV</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+      <p class="copyright">© 2023 Tely - Tous droits réservés</p>
+    </div>
   </footer>
+
+  <script>
+    // Animation du cœur au chargement
+    document.addEventListener('DOMContentLoaded', function() {
+      const heart = document.querySelector('.heart-shape');
+      heart.style.background = `linear-gradient(to top, #ff4d6d 70%, transparent 0%)`;
+    });
+  </script>
 </body>
 </html>
