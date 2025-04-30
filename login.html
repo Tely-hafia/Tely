@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Personnel</title>
+</head>
+<body>
+  <h2>Connexion Personnel</h2>
+  <form id="loginForm">
+    <label>Nom d'utilisateur:</label><br>
+    <input type="text" id="username"><br>
+    <label>Mot de passe:</label><br>
+    <input type="password" id="password"><br><br>
+    <button type="submit">Se connecter</button>
+  </form>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if (user === "employe" && pass === "1234") {
+        window.location.href = "billets.html";
+      } else {
+        alert("Identifiants incorrects !");
+      }
+    });
+  </script>
+</body>
+</html>
