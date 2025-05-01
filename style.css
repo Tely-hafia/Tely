@@ -146,24 +146,52 @@ body {
   margin-bottom: 30px;
 }
 
-/* Cœur de progression */
+/* ———————— Cœur “Ouverture bientôt” ———————— */
 .heart-progress-container {
   position: relative;
   width: 200px;
   height: 180px;
   margin: 30px auto;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 94, 125, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 94, 125, 0.8);
+  }
 }
 
 .heart-shape {
   position: absolute;
   width: 100%; height: 100%;
   clip-path: path("M100 180 C 40 140, 0 90, 50 40 C 100 -10, 150 40, 200 40 C 250 90, 160 140, 100 180 Z");
-  background: linear-gradient(
-    to top,
-    var(--primary) var(--progress, 0%),
-    transparent 0%
+  background: var(--primary);
+  overflow: hidden;
+}
+
+.heart-shape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.3) 0px,
+    rgba(255,255,255,0.3) 6px,
+    transparent 6px,
+    transparent 12px
   );
-  transition: background 0.3s ease-out;
+  background-size: 12px 12px;
+  mask: linear-gradient(to top, black var(--progress, 0%), transparent var(--progress, 0%));
+  -webkit-mask: linear-gradient(to top, black var(--progress, 0%), transparent var(--progress, 0%));
+  animation: stripe-move 1.5s linear infinite;
+}
+
+@keyframes stripe-move {
+  from { background-position: 0 0; }
+  to   { background-position: 12px 12px; }
 }
 
 .heart-label {
@@ -181,28 +209,18 @@ body {
 
 .progress-percent {
   position: absolute;
-  bottom: -30px;
-  left: 0;
+  bottom: -30px; left: 0;
   width: 100%;
   text-align: center;
-  color: var(--white);
+  color: var(--primary);
   font-size: 1.3rem;
   font-weight: 700;
-  animation: pulse 1.5s infinite;
+  animation: pulse-text 1.5s infinite;
 }
 
-.location-announcement {
-  color: var(--white);
-  font-size: 1.3rem;
-  margin-top: 40px;
-  font-weight: 500;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes pulse {
-  0%   { transform: scale(1);   opacity: 0.8; }
-  50%  { transform: scale(1.1); opacity: 1;   }
-  100% { transform: scale(1);   opacity: 0.8; }
+@keyframes pulse-text {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50%      { transform: scale(1.1); opacity: 1;   }
 }
 
 /* Présentation */
@@ -392,3 +410,4 @@ body {
     gap: 10px;
   }
 }
+
