@@ -1,15 +1,15 @@
 /* Variables */
 :root {
-  --primary: #FF5E7D; /* Rose corail */
-  --secondary: #3A86FF; /* Bleu vif */
-  --accent: #00C9A7; /* Vert turquoise */
-  --dark: #2D3748; /* Texte foncé */
-  --light: #F7FAFC; /* Fond clair */
-  --gray: #718096; /* Texte secondaire */
+  --primary: #FF5E7D;    /* Rose corail */
+  --secondary: #3A86FF;  /* Bleu vif */
+  --accent: #00C9A7;     /* Vert turquoise */
+  --dark: #2D3748;       /* Texte foncé */
+  --light: #F7FAFC;      /* Fond clair */
+  --gray: #718096;       /* Texte secondaire */
   --white: #FFFFFF;
 }
 
-/* Reset et base */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -120,10 +120,8 @@ body {
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: linear-gradient(135deg, rgba(58, 134, 255, 0.7) 0%, rgba(255, 94, 125, 0.6) 100%);
 }
 
@@ -158,18 +156,20 @@ body {
 
 .heart-shape {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   clip-path: path("M100 180 C 40 140, 0 90, 50 40 C 100 -10, 150 40, 200 40 C 250 90, 160 140, 100 180 Z");
-  background: linear-gradient(to top, #ff4d6d 0%, transparent 0%);
-  transition: background 2s ease-out;
+  background: linear-gradient(
+    to top,
+    var(--primary) var(--progress, 0%),
+    transparent 0%
+  );
+  transition: background 0.3s ease-out;
 }
 
 .heart-label {
   position: absolute;
   width: 100%;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 1.2em;
@@ -200,12 +200,12 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.8; }
+  0%   { transform: scale(1);   opacity: 0.8; }
+  50%  { transform: scale(1.1); opacity: 1;   }
+  100% { transform: scale(1);   opacity: 0.8; }
 }
 
-/* Le reste du CSS reste inchangé */
+/* Présentation */
 .presentation {
   padding: 80px 0;
 }
@@ -216,7 +216,7 @@ body {
   padding: 0 20px;
 }
 
-.presentation h2 {
+.presentation-content h2 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
@@ -291,6 +291,7 @@ body {
   display: block;
 }
 
+/* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   padding: 80px 0;
@@ -309,6 +310,7 @@ body {
   display: inline-block;
 }
 
+/* Footer */
 .main-footer {
   background-color: var(--dark);
   color: var(--white);
@@ -355,42 +357,36 @@ body {
   font-size: 0.9rem;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
     gap: 15px;
   }
-  
   .main-nav ul {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
   }
-  
   .hero {
     height: 70vh;
     margin-bottom: 30px;
   }
-  
   .hero h1 {
     font-size: 2.5rem;
   }
-  
   .hero p {
     font-size: 1.2rem;
   }
-  
   .heart-progress-container {
     width: 160px;
     height: 144px;
   }
-  
   .footer-content {
     flex-direction: column;
     gap: 20px;
     text-align: center;
   }
-  
   .footer-links {
     flex-direction: column;
     gap: 10px;
