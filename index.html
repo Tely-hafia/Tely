@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,7 +17,7 @@
         <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1741902728/TeLy_Logo_-_Original_with_Transparent_Background_aekoym.svg" alt="Tely" class="logo-img">
         <span class="logo-text">Tely</span>
       </div>
-      
+
       <nav class="main-nav">
         <ul>
           <li class="active"><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
@@ -24,7 +25,7 @@
           <li><a href="login.html"><i class="fas fa-user"></i> Connexion</a></li>
         </ul>
       </nav>
-      
+
       <div class="nav-cta">
         <a href="reserver.html" class="cta-button">Réserver</a>
       </div>
@@ -37,14 +38,15 @@
     <div class="hero-content">
       <h1>Bienvenue à Tely</h1>
       <p>Le lieu idéal pour des moments inoubliables</p>
-      
+
       <!-- Cœur de progression -->
       <div class="heart-progress-container">
-        <div class="heart-shape" style="--progress: 70%"></div>
+        <!-- on démarre à 0%, JS animera jusqu'à 70% -->
+        <div class="heart-shape" style="--progress: 0%;"></div>
         <div class="heart-label">Ouverture bientôt</div>
-        <div class="progress-percent">70%</div>
+        <div class="progress-percent">0%</div>
       </div>
-      
+
       <p class="location-announcement">Tely arrive bientôt à Labé</p>
     </div>
   </section>
@@ -55,33 +57,30 @@
       <div class="presentation-content">
         <h2>Votre espace de loisirs premium</h2>
         <p class="intro">Bienvenue à Tely, le lieu idéal pour les jeunes et les couples en quête de fun et de moments inoubliables !</p>
-        
+
         <div class="features-grid">
           <div class="feature-card">
             <i class="fas fa-water-ladder"></i>
             <h3>Parc aquatique</h3>
             <p>Grand toboggan spectaculaire et bassins rafraîchissants</p>
           </div>
-          
           <div class="feature-card">
             <i class="fas fa-gamepad"></i>
             <h3>Espace gaming</h3>
             <p>Arcades et jeux vidéo dernière génération</p>
           </div>
-          
           <div class="feature-card">
             <i class="fas fa-film"></i>
             <h3>Cinéma étoilé</h3>
             <p>Projections en plein air sous les étoiles</p>
           </div>
-          
           <div class="feature-card">
             <i class="fas fa-utensils"></i>
             <h3>Restauration</h3>
             <p>Espaces gourmands pour toutes les envies</p>
           </div>
         </div>
-        
+
         <div class="description">
           <p>Tely est un centre de loisirs unique, conçu pour offrir détente, sensations fortes et complicité. Vivez l'adrénaline dans notre parc aquatique, amusez-vous entre amis dans les jeux forains et l'espace gaming, puis détendez-vous à deux dans notre cinéma en plein air.</p>
           <p>Et pour combler toutes les envies, nos espaces de restauration vous attendent dans une ambiance conviviale et décontractée.</p>
@@ -99,6 +98,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="main-footer">
     <div class="container">
       <div class="footer-content">
@@ -117,10 +117,22 @@
   </footer>
 
   <script>
-    // Animation du cœur au chargement
-    document.addEventListener('DOMContentLoaded', function() {
+    // Animation du cœur de progression de 0 à 70%
+    document.addEventListener('DOMContentLoaded', () => {
       const heart = document.querySelector('.heart-shape');
-      heart.style.background = `linear-gradient(to top, #ff4d6d 70%, transparent 0%)`;
+      const percentText = document.querySelector('.progress-percent');
+      let progress = 0;
+      const target = 70;
+      const step = 1;
+      const interval = setInterval(() => {
+        if (progress >= target) {
+          clearInterval(interval);
+        } else {
+          progress += step;
+          heart.style.setProperty('--progress', progress + '%');
+          percentText.textContent = progress + '%';
+        }
+      }, 20); // toutes les 20 ms
     });
   </script>
 </body>
