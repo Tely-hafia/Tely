@@ -1,7 +1,7 @@
 /* Variables (couleurs du logo TeLy) */
 :root {
   --primary: #3778C2;    /* Bleu TeLy */
-  --secondary: #F15A24;  /* Orange TeLy */
+  --secondary: #F15A24;  /* Orange Tely */
   --dark: #2D3748;
   --light: #F7FAFC;
   --white: #FFFFFF;
@@ -24,56 +24,39 @@ body {
 .nav-banner {
   background-color: var(--white);
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0; z-index: 1000;
+  position: sticky; top: 0; z-index: 1000;
   padding: 15px 0;
 }
 .nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  max-width: 1200px; margin: auto; padding: 0 20px;
+  display: flex; justify-content: space-between; align-items: center;
 }
 .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex; align-items: center; gap: 10px;
 }
 .logo-img {
-  height: 40px;
-  transition: transform 0.3s;
+  height: 40px; transition: transform 0.3s;
 }
 .logo-img:hover {
   transform: scale(1.1);
 }
 .logo-text {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--primary);
+  font-size: 1.8rem; font-weight: 600; color: var(--primary);
 }
 .main-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 25px;
+  display: flex; list-style: none; gap: 25px;
 }
 .main-nav a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--dark); text-decoration: none;
+  font-weight: 500; transition: color 0.3s;
 }
 .main-nav a:hover {
   color: var(--primary);
 }
 .main-nav li.active a {
-  color: var(--primary);
-  font-weight: 600;
+  color: var(--primary); font-weight: 600;
 }
 .cta-button {
   background-color: var(--secondary);
@@ -90,14 +73,20 @@ body {
   box-shadow: 0 5px 15px rgba(241,90,36,0.3);
 }
 
-/* Hero Section */
+/* Hero Section – image entière visible */
 .hero {
-  height: 80vh;
+  position: relative;
+  width: 100%;
+  /* ratio 936/2460 ≈ 38% pour conserver l'intégralité */
+  padding-top: 38%;
   background: url('https://res.cloudinary.com/dvcapfeev/image/upload/v1746102911/ChatGPT_Image_7_avr._2025_12_08_56_leglyn.png')
-              center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+              center/contain no-repeat;
+}
+.hero-content {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .hero-content h1 {
   font-family: 'Poppins', sans-serif;
@@ -111,9 +100,7 @@ body {
   padding: 80px 0;
 }
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+  max-width: 1200px; margin: auto; padding: 0 20px;
 }
 .presentation-content h2 {
   text-align: center;
@@ -147,13 +134,10 @@ body {
   transform: translateY(-10px);
 }
 .feature-card i {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 20px;
+  font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;
 }
 .feature-card h3 {
-  margin-bottom: 15px;
-  color: var(--dark);
+  margin-bottom: 15px; color: var(--dark);
 }
 .feature-card p {
   color: var(--dark);
@@ -168,88 +152,65 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 .description p {
-  margin-bottom: 20px;
-  color: var(--dark);
-  line-height: 1.8;
+  margin-bottom: 20px; color: var(--dark); line-height: 1.8;
 }
 .highlight {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.2rem; font-weight: 600;
   color: var(--primary);
-  margin-top: 30px;
-  display: block;
+  margin-top: 30px; display: block;
 }
 
 /* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  padding: 80px 0;
-  text-align: center;
-  color: var(--white);
+  padding: 80px 0; text-align: center; color: var(--white);
 }
 .cta-section h2 {
-  margin-bottom: 30px;
-  font-size: 2.2rem;
+  margin-bottom: 30px; font-size: 2.2rem;
 }
 .cta-button.big {
-  padding: 15px 40px;
-  font-size: 1.1rem;
+  padding: 15px 40px; font-size: 1.1rem;
 }
 
 /* Footer */
 .main-footer {
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--dark); color: var(--white);
   padding: 50px 0 20px;
 }
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 30px;
 }
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
+  display: flex; align-items: center; gap: 10px; font-size: 1.5rem;
 }
 .footer-links {
-  display: flex;
-  gap: 20px;
+  display: flex; gap: 20px;
 }
 .footer-links a {
-  color: var(--white);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  color: var(--white); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
   transition: color 0.3s;
 }
 .footer-links a:hover {
   color: var(--secondary);
 }
 .copyright {
-  text-align: center;
-  padding-top: 20px;
+  text-align: center; padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.7);
-  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7); font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; gap: 15px;
   }
   .main-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap; justify-content: center; gap: 15px;
   }
   .hero {
-    height: 60vh;
+    padding-top: 60%; /* plus haut pour mobile */
   }
   .hero-content h1 {
     font-size: 2.5rem;
@@ -261,13 +222,9 @@ body {
     gap: 20px;
   }
   .footer-content {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    flex-direction: column; gap: 20px; text-align: center;
   }
   .footer-links {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; gap: 10px;
   }
 }
-
